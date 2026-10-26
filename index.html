@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Habibi — цифровой сотрудник для кафе и доставки</title>
+<meta name="description" content="Обученный помощник отвечает клиентам в Telegram по вашему меню и режиму работы, собирает заказ и приносит его вам готовым. Вы только нажимаете «Принять».">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-mark" viewBox="0 0 7 6"><rect x="1.08" y="0.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="2.08" y="0.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="4.08" y="0.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="5.08" y="0.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="0.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="1.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="2.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="3.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="4.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="5.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="6.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="0.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="1.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="2.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="3.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="4.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="5.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="6.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="1.08" y="3.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="2.08" y="3.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="3.08" y="3.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="4.08" y="3.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="5.08" y="3.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="2.08" y="4.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="3.08" y="4.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="4.08" y="4.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="3.08" y="5.08" width=".84" height=".84" rx=".15" fill="currentColor"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-bike" viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-chef" viewBox="0 0 24 24"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><path d="M6 17h12"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+</svg>
+
+<header class="top wrap">
+  <a class="brand" href="#top">Habibi<svg class="brandmark" aria-hidden="true"><use href="#i-mark"/></svg></a>
+  <nav class="menu" aria-label="Разделы">
+    <a href="#how">Как работает</a>
+    <a href="#screens">Экраны</a>
+    <a href="#hood">Под капотом</a>
+    <a href="#faq">Вопросы</a>
+  </nav>
+  <a class="btn btn-ink btn-sm" href="https://t.me/NoGodBut1" target="_blank" rel="noopener"><svg class="ic"><use href="#i-send"/></svg>Написать в Telegram</a>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero wrap">
+  <div class="hero-copy">
+    <p class="eyebrow"><i></i>Цифровой сотрудник для кафе, кухонь и доставки</p>
+    <h1>Вы больше не отвечаете на&nbsp;вопросы. <span>Вы только подтверждаете заказы.</span></h1>
+    <p class="lead">Обученный помощник отвечает клиентам в Telegram по вашему меню, ценам и режиму работы, собирает заказ до конца и приносит его вам готовым. Вам остаётся нажать «Принять».</p>
+    <div class="actions">
+      <a class="btn btn-accent" href="https://t.me/NoGodBut1" target="_blank" rel="noopener"><svg class="ic"><use href="#i-send"/></svg>Написать в Telegram</a>
+      <a class="textlink" href="#how">Как это работает <svg class="ic"><use href="#i-arrow"/></svg></a>
+    </div>
+    <p class="footnote">Подключение за пару дней · Клиентам нужен только Telegram · Вам и сотрудникам только браузер на телефоне</p>
+  </div>
+
+  <div class="hero-visual" aria-label="Переписка клиента с помощником и карточка готового заказа у владельца">
+    <div class="phone">
+      <div class="tg">
+        <div class="tg-head">
+          <svg class="ic"><use href="#i-back"/></svg>
+          <span class="tg-ava">B</span>
+          <div><b>Burger Bar</b><small>помощник · онлайн</small></div>
+        </div>
+        <div class="tg-body">
+          <div class="msg in">Здравствуйте, а вы сегодня до скольки?<time>21:02</time></div>
+          <div class="msg out">Здравствуйте! Сегодня до 23:00, доставку принимаем до 22:30. Подсказать что-нибудь из меню?<time>21:02</time></div>
+          <div class="msg in">Двойной чизбургер есть? И картошку. Только без лука<time>21:03</time></div>
+          <div class="msg out">Есть. Двойной чизбургер без лука — 590 ₽, картофель фри — 190 ₽. Доставка или самовывоз?<time>21:03</time></div>
+          <div class="msg in">Доставка, Ленина 14, кв. 7<time>21:04</time></div>
+          <div class="msg out">Ленина 14 — зона «Центр», доставка 150 ₽, привезём примерно за 40 минут. Итого 930 ₽. Подтверждаете?<time>21:04</time></div>
+          <div class="msg in">Да<time>21:04</time></div>
+          <div class="msg out">Принял, ваш заказ №42. Напишу, когда курьер выедет.<time>21:04</time></div>
+        </div>
+        <div class="tg-input"><span>Сообщение</span></div>
+      </div>
+    </div>
+
+    <div class="float-card cab" aria-label="Карточка заказа у владельца">
+      <div class="fc-head"><span class="badge new">Новый</span><b>№42</b><span class="age"><svg class="ic"><use href="#i-clock"/></svg>только что</span></div>
+      <div class="fc-sum"><span><svg class="ic"><use href="#i-bike"/></svg>Доставка · Ленина 14, кв. 7</span><b>930</b></div>
+      <ul class="items">
+        <li><b>1×</b><span>Двойной чизбургер <em>без лука</em></span></li>
+        <li><b>1×</b><span>Картофель фри</span></li>
+      </ul>
+      <div class="fc-actions"><button class="ubtn dark" type="button"><svg class="ic"><use href="#i-check"/></svg>Принять</button><button class="ubtn outline" type="button">Отклонить</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAIN ================= -->
+<section class="section wrap" id="pain">
+  <div class="section-head">
+    <p class="eyebrow">Знакомо?</p>
+    <h2>Пять клиентов по десять минут. <span class="muted">Час вашего внимания, размазанный по дню.</span></h2>
+    <p class="section-lead">«А вы до скольки?», «А доставка сколько?», «А без лука можно?». Отвечать сразу не получается, клиент ждёт, вы отвлекаетесь от кухни. Часть людей так и не дописывает заказ.</p>
+  </div>
+  <div class="tiles">
+    <article><span class="num">01</span><h3>Экономит время</h3><p>Рутину берёт помощник. Вам остаётся только решение: принять или отклонить.</p></article>
+    <article><span class="num">02</span><h3>Всегда на связи</h3><p>Отвечает за секунды. В десять вечера, в воскресенье и когда у вас полная посадка.</p></article>
+    <article><span class="num">03</span><h3>Без человеческого фактора</h3><p>Говорит только то, что вы заложили: цены, сроки, зоны, стоп-лист. Не забудет и не перепутает.</p></article>
+  </div>
+</section>
+
+<!-- ================= NOT A BOT ================= -->
+<section class="section wrap" id="notbot">
+  <div class="section-head">
+    <p class="eyebrow">Это не бот</p>
+    <h2>Боты с кнопками — прошлый век. <span class="muted">Это обученный сотрудник.</span></h2>
+  </div>
+  <div class="compare">
+    <article class="old">
+      <h3><svg class="ic"><use href="#i-x"/></svg>Бот с кнопками</h3>
+      <ul>
+        <li>Ведёт по дереву: «нажмите 1, чтобы…»</li>
+        <li>Ломается на первом же «а можно без лука?»</li>
+        <li>Не знает, что сегодня вы закрылись раньше</li>
+        <li>Каждый новый вопрос — доработка</li>
+      </ul>
+    </article>
+    <article class="new">
+      <h3><svg class="ic"><use href="#i-check"/></svg>Обученный помощник</h3>
+      <ul>
+        <li>Читает вопрос как человек и отвечает по вашему меню</li>
+        <li>Уточняет детали: адрес, время, состав, пожелания</li>
+        <li>Знает режим работы, зоны доставки и стоп-лист на сегодня</li>
+        <li>Не знает ответа — зовёт вас и ставит разговор на паузу</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ================= HOW ================= -->
+<section class="section wrap" id="how">
+  <div class="section-head">
+    <p class="eyebrow">Как это работает</p>
+    <h2>Четыре шага. <span class="muted">Ваш только один.</span></h2>
+  </div>
+  <ol class="steps">
+    <li>
+      <span class="num">01</span>
+      <h3>Клиент пишет в Telegram</h3>
+      <p>Как привык. Никаких приложений, форм и регистраций.</p>
+    </li>
+    <li>
+      <span class="num">02</span>
+      <h3>Помощник отвечает и собирает заказ</h3>
+      <p>Состав, адрес, время, сумма. Всё по вашим данным, без выдумок.</p>
+    </li>
+    <li class="yours">
+      <span class="num">03</span>
+      <h3>Вы нажимаете «Принять»</h3>
+      <p>Заказ приходит готовым. Одна кнопка, и клиент получает подтверждение.</p>
+    </li>
+    <li>
+      <span class="num">04</span>
+      <h3>Кухня и курьер видят своё</h3>
+      <p>У кухни очередь и «Готово», у курьера адрес и «Доставлено». Без цен и лишнего.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ================= SCREENS ================= -->
+<section class="section screens" id="screens">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Кабинет владельца, кухни и курьера</p>
+      <h2>Всё, что нужно. <span class="muted">На телефоне, без обучения.</span></h2>
+      <p class="section-lead">Каждый входит под своей учёткой и видит только свой экран. Кухня не видит цен, курьер не видит телефона, пока не взял заказ.</p>
+    </div>
+
+    <div class="gallery">
+
+      <!-- Заказы -->
+      <figure>
+        <div class="phone small">
+          <div class="cab app">
+            <div class="app-top"><b>Заказы</b><span class="toggle"><i class="on">Доска</i><i>Список</i></span></div>
+            <div class="board">
+              <section class="col">
+                <h4><svg class="ic"><use href="#i-chat"/></svg>Новые<span>3</span></h4>
+                <a class="bcard"><div class="r1"><b>№42</b><b>930</b></div><div class="r2">Алина</div><div class="r3"><span><svg class="ic"><use href="#i-bike"/></svg>Доставка</span><span class="age">1 мин</span></div></a>
+                <a class="bcard"><div class="r1"><b>№41</b><b>1 240</b></div><div class="r2">Марат</div><div class="r3"><span><svg class="ic"><use href="#i-bag"/></svg>Самовывоз</span><span class="age">6 мин</span></div></a>
+                <a class="bcard"><div class="r1"><b>№43</b><b>640</b></div><div class="r2">Самира</div><div class="r3"><span><svg class="ic"><use href="#i-bike"/></svg>Доставка</span><span class="age">8 мин</span></div></a>
+              </section>
+              <section class="col">
+                <h4><svg class="ic"><use href="#i-chef"/></svg>На кухне<span>3</span></h4>
+                <a class="bcard"><div class="r1"><b>№40</b><b>780</b></div><div class="r2">Дана</div><div class="r3"><span><svg class="ic"><use href="#i-bike"/></svg>Доставка</span><span class="age">9 мин</span></div></a>
+                <a class="bcard"><div class="r1"><b>№39</b><b>1 560</b></div><div class="r2">Тимур</div><div class="r3"><span><svg class="ic"><use href="#i-bike"/></svg>Доставка</span><span class="age">12 мин</span></div></a>
+              </section>
+            </div>
+            <nav class="tabbar"><span><svg class="ic"><use href="#i-house"/></svg>Главная</span><span class="on"><svg class="ic"><use href="#i-bag"/></svg>Заказы</span><span><svg class="ic"><use href="#i-chat"/></svg>Переписки</span><span><svg class="ic"><use href="#i-grid"/></svg>Ещё</span></nav>
+          </div>
+        </div>
+        <figcaption><b>Заказы</b>Доска по статусам. Обновляется сама, карточка открывает заказ.</figcaption>
+      </figure>
+
+      <!-- Переписки -->
+      <figure>
+        <div class="phone small">
+          <div class="cab app">
+            <div class="thread-head"><svg class="ic"><use href="#i-back"/></svg><span class="ava">А</span><div><b>Алина</b><small class="ok">Отвечает помощник</small></div><label class="switch"><i></i>Сам</label></div>
+            <div class="thread">
+              <div class="day">Сегодня</div>
+              <div class="bub c"><small>Клиент</small>А можно без лука?</div>
+              <div class="bub b"><small>Помощник</small>Конечно. Двойной чизбургер без лука — 590 ₽. Доставка или самовывоз?</div>
+              <div class="bub c"><small>Клиент</small>Доставка, Ленина 14, кв. 7</div>
+              <div class="bub b"><small>Помощник</small>Ленина 14 — зона «Центр», доставка 150 ₽. Итого 930 ₽. Подтверждаете?</div>
+              <div class="bub c"><small>Клиент</small>Да</div>
+              <div class="sys">Создан заказ №42 · ждёт вашего подтверждения</div>
+            </div>
+            <div class="thread-input"><span>Написать клиенту</span><svg class="ic"><use href="#i-send"/></svg></div>
+          </div>
+        </div>
+        <figcaption><b>Переписки</b>Видите всё, что говорит помощник. Один переключатель, и разговор ваш.</figcaption>
+      </figure>
+
+      <!-- Кухня -->
+      <figure>
+        <div class="phone small">
+          <div class="cab app">
+            <div class="app-top"><div><b>Кухня</b><small>Очередь · обновляется сама</small></div><span class="ubtn outline xs"><svg class="ic"><use href="#i-volume"/></svg>Звук</span></div>
+            <div class="utabs"><span class="on">Все <i>3</i></span><span>Доставка <i>2</i></span><span>Самовывоз <i>1</i></span></div>
+            <div class="summary"><div><span>В работе</span><b>3</b></div><div><span>10–20 мин</span><b class="warn">1</b></div><div><span>20+ мин</span><b>0</b></div></div>
+            <article class="kcard warn">
+              <header><b>№40</b><span class="kind"><svg class="ic"><use href="#i-bike"/></svg>Доставка</span><span class="timer warn"><svg class="ic"><use href="#i-clock"/></svg>14 мин</span></header>
+              <ul class="items"><li><b>2×</b><span>Классический бургер</span></li><li><b>1×</b><span>Картофель фри</span></li><li><b>1×</b><span>Кола 0,5</span></li></ul>
+              <div class="note"><svg class="ic"><use href="#i-alert"/></svg>Без соуса, острое отдельно</div>
+              <footer><span class="pcs">4 шт.</span><span class="pay">Оплачен</span><span class="ubtn dark xs"><svg class="ic"><use href="#i-check"/></svg>Готово</span></footer>
+            </article>
+            <article class="kcard">
+              <header><b>№41</b><span class="kind"><svg class="ic"><use href="#i-bag"/></svg>Самовывоз</span><span class="timer"><svg class="ic"><use href="#i-clock"/></svg>5 мин</span></header>
+              <ul class="items"><li><b>1×</b><span>Чикенбургер</span></li><li><b>2×</b><span>Наггетсы 9 шт.</span></li></ul>
+              <footer><span class="pcs">3 шт.</span><span class="pay cash">Наличные</span><span class="ubtn dark xs"><svg class="ic"><use href="#i-check"/></svg>Готово</span></footer>
+            </article>
+          </div>
+        </div>
+        <figcaption><b>Кухня</b>Очередь с таймером на каждом заказе. Одна кнопка «Готово».</figcaption>
+      </figure>
+
+      <!-- Курьер -->
+      <figure>
+        <div class="phone small">
+          <div class="cab app">
+            <div class="app-top"><b>Доставки</b></div>
+            <div class="utabs"><span class="on">Мои <i>1</i></span><span>Свободные <i>2</i></span></div>
+            <article class="kcard">
+              <header><b>№38</b><span class="badge progress">В пути</span><span class="timer"><svg class="ic"><use href="#i-clock"/></svg>11 мин</span></header>
+              <div class="where"><b>Дана</b><small>Пушкина 3, под. 2 · Центр · <span class="pay">Оплачен</span></small></div>
+              <ul class="items"><li><b>1×</b><span>Двойной чизбургер</span></li><li><b>1×</b><span>Лимонад 0,5</span></li></ul>
+              <footer><span class="ubtn outline sq"><svg class="ic"><use href="#i-phone"/></svg></span><span class="ubtn outline sq"><svg class="ic"><use href="#i-pin"/></svg></span><span class="ubtn dark xs grow"><svg class="ic"><use href="#i-check"/></svg>Доставлено</span></footer>
+            </article>
+            <div class="sep">Свободные</div>
+            <article class="kcard">
+              <header><b>№40</b><span class="badge ok">Готов</span><span class="timer"><svg class="ic"><use href="#i-clock"/></svg>2 мин</span></header>
+              <div class="where"><b>Тимур</b><small>Ленина 14, кв. 7 · Центр · 3 позиции</small></div>
+              <footer><span class="pay cash">Наличные</span><span class="ubtn primary xs right"><svg class="ic"><use href="#i-truck"/></svg>Взять</span></footer>
+            </article>
+          </div>
+        </div>
+        <figcaption><b>Курьер</b>Свои доставки и свободные заказы. «Взять», позвонить, маршрут, «Доставлено».</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCALE ================= -->
+<section class="section wrap" id="scale">
+  <div class="section-head">
+    <p class="eyebrow">Когда вырастете</p>
+    <h2>Начните с одной точки. <span class="muted">Менять ничего не придётся.</span></h2>
+  </div>
+  <div class="tiles">
+    <article><h3>Несколько точек и курьеров</h3><p>Каждому сотруднику свой вход и свой экран. Владелец видит всё в одном кабинете.</p></article>
+    <article><h3>Перехват разговора</h3><p>В любой момент пишете клиенту сами. Помощник замолкает, пока вы не вернёте ему слово.</p></article>
+    <article><h3>Меню, режим, зоны</h3><p>Правите в кабинете, без программиста. Помощник знает об изменениях сразу.</p></article>
+  </div>
+</section>
+
+<!-- ================= UNDER THE HOOD ================= -->
+<section class="hood" id="hood">
+  <div class="wrap">
+    <div class="hood-grid">
+      <div>
+        <p class="eyebrow"><i></i>Под капотом</p>
+        <h2>Под капотом полноценная ERP-система. <span>Снаружи кнопка «Принять».</span></h2>
+        <p class="hood-lead">Каждый заказ, клиент и позиция меню — это запись в учётной системе, а не сообщение в чате. Поэтому ничего не теряется, всё можно посчитать, а когда понадобятся склад, финансы или вторая точка, они уже на месте.</p>
+        <details class="hint">
+          <summary>Что такое ERP?<svg class="ic"><use href="#i-arrow"/></svg></summary>
+          <p>Одна программа вместо тетради, таблиц и переписок. Заказы, клиенты, меню, деньги и сотрудники живут в одном месте, с историей и отчётами. Мы используем ERPNext — открытую систему, которой пользуются десятки тысяч компаний по всему миру.</p>
+        </details>
+      </div>
+      <ul class="chips">
+        <li><b>Telegram</b><span>Клиенты пишут туда, где уже сидят</span></li>
+        <li><b>ERPNext</b><span>Открытая ERP, данные ваши</span></li>
+        <li><b>24/7</b><span>Помощник не спит и не уходит на обед</span></li>
+        <li><b>Роли и права</b><span>Кухня, курьер, владелец видят разное</span></li>
+        <li><b>Пауза и перехват</b><span>Человек всегда выше помощника</span></li>
+        <li><b>История</b><span>Каждая переписка и заказ сохранены</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section wrap faq" id="faq">
+  <div class="section-head">
+    <p class="eyebrow">Вопросы</p>
+    <h2>Разложим <span class="muted">по полочкам.</span></h2>
+  </div>
+  <div class="qa">
+    <details open>
+      <summary>Что будет, если помощник не знает ответа?<span>+</span></summary>
+      <p>Он не выдумывает. Скажет клиенту, что уточнит, поставит разговор на паузу и покажет вам чат с пометкой «ждёт вас».</p>
+    </details>
+    <details>
+      <summary>Нужно ли что-то устанавливать?<span>+</span></summary>
+      <p>Нет. Клиентам хватает Telegram, вам и сотрудникам — браузера на телефоне. Кухне удобно с планшета.</p>
+    </details>
+    <details>
+      <summary>Можно ли менять меню и цены самому?<span>+</span></summary>
+      <p>Да, в кабинете. Помощник использует новые данные сразу, без переобучения и программиста.</p>
+    </details>
+    <details>
+      <summary>Подойдёт ли, если у меня не кафе?<span>+</span></summary>
+      <p>Схема та же для любого бизнеса, где люди пишут и заказывают: аренда, магазин, туры, услуги. Напишите, разберём ваш случай.</p>
+    </details>
+    <details>
+      <summary>Сколько стоит?<span>+</span></summary>
+      <p>Зависит от объёма и того, что уже есть. Напишите в Telegram, за один разговор посчитаем.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact wrap" id="contact">
+  <p class="eyebrow"><i></i>Начнём с разговора</p>
+  <h2>Напишите в Telegram. <span>Расскажите, как у вас принимают заказы сейчас.</span></h2>
+  <a class="btn btn-accent btn-lg" href="https://t.me/NoGodBut1" target="_blank" rel="noopener"><svg class="ic"><use href="#i-send"/></svg>@NoGodBut1</a>
+  <p class="footnote">Отвечаем лично. Покажем кабинет на живом примере и прикинем срок подключения.</p>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <a class="brand" href="#top">Habibi<svg class="brandmark" aria-hidden="true"><use href="#i-mark"/></svg></a>
+  <p>Цифровые сотрудники, кабинеты и ERP для малого бизнеса.</p>
+  <small>© 2026 Habibi</small>
+</footer>
+</body>
+</html>
