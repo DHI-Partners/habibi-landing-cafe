@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Habibi — a digital employee for cafés and delivery</title>
+<meta name="description" content="A trained assistant answers your customers on Telegram using your menu and opening hours, builds the order and hands it to you ready. You only tap “Accept”.">
+<link rel="canonical" href="https://cafe.habibi-erp.com/en/">
+<link rel="alternate" hreflang="ru" href="https://cafe.habibi-erp.com/">
+<link rel="alternate" hreflang="en" href="https://cafe.habibi-erp.com/en/">
+<link rel="alternate" hreflang="ar" href="https://cafe.habibi-erp.com/ar/">
+<link rel="alternate" hreflang="x-default" href="https://cafe.habibi-erp.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-mark" viewBox="0 0 7 6"><rect x="1.08" y="0.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="2.08" y="0.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="4.08" y="0.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="5.08" y="0.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="0.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="1.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="2.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="3.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="4.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="5.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="6.08" y="1.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="0.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="1.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="2.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="3.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="4.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="5.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="6.08" y="2.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="1.08" y="3.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="2.08" y="3.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="3.08" y="3.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="4.08" y="3.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="5.08" y="3.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="2.08" y="4.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="3.08" y="4.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="4.08" y="4.08" width=".84" height=".84" rx=".15" fill="currentColor"/><rect x="3.08" y="5.08" width=".84" height=".84" rx=".15" fill="currentColor"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-bike" viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-chef" viewBox="0 0 24 24"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><path d="M6 17h12"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+</svg>
+
+<header class="top wrap">
+  <a class="brand" href="#top">Habibi<svg class="brandmark" aria-hidden="true"><use href="#i-mark"/></svg></a>
+  <nav class="menu" aria-label="Sections">
+    <a href="#how">How it works</a>
+    <a href="#screens">Screens</a>
+    <a href="#hood">Under the hood</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="top-actions">
+    <nav class="lang" aria-label="Language"><a href="../" hreflang="ru" lang="ru">RU</a><a class="on" aria-current="page">EN</a><a href="../ar/" hreflang="ar" lang="ar">AR</a></nav>
+    <a class="btn btn-ink btn-sm" href="https://t.me/NoGodBut1" target="_blank" rel="noopener"><svg class="ic"><use href="#i-send"/></svg><span>Message on Telegram</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero wrap">
+  <div class="hero-copy">
+    <p class="eyebrow"><i></i>A digital employee for cafés, home kitchens and delivery</p>
+    <h1>You stop answering questions. <span>You only confirm orders.</span></h1>
+    <p class="lead">A trained assistant answers your customers on Telegram using your menu, prices and opening hours, takes the order all the way through and hands it to you ready. All that is left is to tap “Accept”.</p>
+    <div class="actions">
+      <a class="btn btn-accent" href="https://t.me/NoGodBut1" target="_blank" rel="noopener"><svg class="ic"><use href="#i-send"/></svg>Message on Telegram</a>
+      <a class="textlink" href="#how">How it works <svg class="ic"><use href="#i-arrow"/></svg></a>
+    </div>
+    <p class="footnote">Set up in a couple of days · Customers only need Telegram · You and your staff only need a phone browser</p>
+  </div>
+
+  <div class="hero-visual" aria-label="A customer chatting with the assistant and the ready order card on the owner’s side">
+    <div class="phone">
+      <div class="tg">
+        <div class="tg-head">
+          <svg class="ic"><use href="#i-back"/></svg>
+          <span class="tg-ava">B</span>
+          <div><b>Burger Bar</b><small>assistant · online</small></div>
+        </div>
+        <div class="tg-body">
+          <div class="msg in">Hi, what time do you close today?<time>9:02 PM</time></div>
+          <div class="msg out">Hi! We’re open until 11 PM today, delivery orders until 10:30 PM. Want me to suggest something from the menu?<time>9:02 PM</time></div>
+          <div class="msg in">Do you have a double cheeseburger? And fries. No onions please<time>9:03 PM</time></div>
+          <div class="msg out">We do. Double cheeseburger, no onions — $9.90, fries — $3.50. Delivery or pickup?<time>9:03 PM</time></div>
+          <div class="msg in">Delivery, 14 Main St, apt 7<time>9:04 PM</time></div>
+          <div class="msg out">14 Main St is in the Downtown zone, delivery $2.50, about 40 minutes. Total $15.90. Shall I confirm?<time>9:04 PM</time></div>
+          <div class="msg in">Yes<time>9:04 PM</time></div>
+          <div class="msg out">Done, your order is #42. I’ll message you when the courier is on the way.<time>9:04 PM</time></div>
+        </div>
+        <div class="tg-input"><span>Message</span></div>
+      </div>
+    </div>
+
+    <div class="float-card cab" aria-label="Order card on the owner’s side">
+      <div class="fc-head"><span class="badge new">New</span><b>#42</b><span class="age"><svg class="ic"><use href="#i-clock"/></svg>just now</span></div>
+      <div class="fc-sum"><span><svg class="ic"><use href="#i-bike"/></svg>Delivery · 14 Main St, apt 7</span><b>15.90</b></div>
+      <ul class="items">
+        <li><b>1×</b><span>Double cheeseburger <em>no onions</em></span></li>
+        <li><b>1×</b><span>Fries</span></li>
+      </ul>
+      <div class="fc-actions"><button class="ubtn dark" type="button"><svg class="ic"><use href="#i-check"/></svg>Accept</button><button class="ubtn outline" type="button">Decline</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PAIN ================= -->
+<section class="section wrap" id="pain">
+  <div class="section-head">
+    <p class="eyebrow">Sound familiar?</p>
+    <h2>Five customers, ten minutes each. <span class="muted">An hour of your attention, smeared across the day.</span></h2>
+    <p class="section-lead">“What time do you close?”, “How much is delivery?”, “Can I get it without onions?”. You can’t always reply right away, the customer waits, you’re pulled away from the kitchen. Some people never finish the order.</p>
+  </div>
+  <div class="tiles">
+    <article><span class="num">01</span><h3>Saves your time</h3><p>The assistant takes the routine. You’re left with one decision: accept or decline.</p></article>
+    <article><span class="num">02</span><h3>Always available</h3><p>Replies in seconds. At ten at night, on a Sunday, and when the place is packed.</p></article>
+    <article><span class="num">03</span><h3>No human error</h3><p>Says only what you set up: prices, times, zones, today’s stop list. Doesn’t forget, doesn’t mix things up.</p></article>
+  </div>
+</section>
+
+<!-- ================= NOT A BOT ================= -->
+<section class="section wrap" id="notbot">
+  <div class="section-head">
+    <p class="eyebrow">Not a bot</p>
+    <h2>Button bots are last century. <span class="muted">This is a trained employee.</span></h2>
+  </div>
+  <div class="compare">
+    <article class="old">
+      <h3><svg class="ic"><use href="#i-x"/></svg>Button bot</h3>
+      <ul>
+        <li>Walks you down a tree: “press 1 to…”</li>
+        <li>Breaks on the first “can I get it without onions?”</li>
+        <li>Doesn’t know you closed early today</li>
+        <li>Every new question means more development</li>
+      </ul>
+    </article>
+    <article class="new">
+      <h3><svg class="ic"><use href="#i-check"/></svg>Trained assistant</h3>
+      <ul>
+        <li>Reads the question like a person and answers from your menu</li>
+        <li>Clarifies the details: address, time, items, special requests</li>
+        <li>Knows your hours, delivery zones and today’s stop list</li>
+        <li>Doesn’t know the answer? Calls you and pauses the conversation</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ================= HOW ================= -->
+<section class="section wrap" id="how">
+  <div class="section-head">
+    <p class="eyebrow">How it works</p>
+    <h2>Four steps. <span class="muted">Only one is yours.</span></h2>
+  </div>
+  <ol class="steps">
+    <li>
+      <span class="num">01</span>
+      <h3>The customer writes on Telegram</h3>
+      <p>The way they’re used to. No apps, forms or sign-ups.</p>
+    </li>
+    <li>
+      <span class="num">02</span>
+      <h3>The assistant replies and builds the order</h3>
+      <p>Items, address, time, total. All from your data, nothing made up.</p>
+    </li>
+    <li class="yours">
+      <span class="num">03</span>
+      <h3>You tap “Accept”</h3>
+      <p>The order arrives ready. One tap, and the customer gets a confirmation.</p>
+    </li>
+    <li>
+      <span class="num">04</span>
+      <h3>Kitchen and courier see their part</h3>
+      <p>The kitchen gets a queue and “Ready”, the courier gets the address and “Delivered”. No prices, nothing extra.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ================= SCREENS ================= -->
+<section class="section screens" id="screens">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Owner, kitchen and courier dashboards</p>
+      <h2>Everything you need. <span class="muted">On a phone, no training.</span></h2>
+      <p class="section-lead">Everyone signs in with their own account and sees only their screen. The kitchen doesn’t see prices, the courier doesn’t see the phone number until they take the order.</p>
+    </div>
+
+    <div class="gallery">
+
+      <!-- Orders -->
+      <figure>
+        <div class="phone small">
+          <div class="cab app">
+            <div class="app-top"><b>Orders</b><span class="toggle"><i class="on">Board</i><i>List</i></span></div>
+            <div class="board">
+              <section class="col">
+                <h4><svg class="ic"><use href="#i-chat"/></svg>New<span>3</span></h4>
+                <a class="bcard"><div class="r1"><b>#42</b><b>15.90</b></div><div class="r2">Alina</div><div class="r3"><span><svg class="ic"><use href="#i-bike"/></svg>Delivery</span><span class="age">1 min</span></div></a>
+                <a class="bcard"><div class="r1"><b>#41</b><b>21.40</b></div><div class="r2">Marat</div><div class="r3"><span><svg class="ic"><use href="#i-bag"/></svg>Pickup</span><span class="age">6 min</span></div></a>
+                <a class="bcard"><div class="r1"><b>#43</b><b>11.20</b></div><div class="r2">Samira</div><div class="r3"><span><svg class="ic"><use href="#i-bike"/></svg>Delivery</span><span class="age">8 min</span></div></a>
+              </section>
+              <section class="col">
+                <h4><svg class="ic"><use href="#i-chef"/></svg>In the kitchen<span>3</span></h4>
+                <a class="bcard"><div class="r1"><b>#40</b><b>14.30</b></div><div class="r2">Dana</div><div class="r3"><span><svg class="ic"><use href="#i-bike"/></svg>Delivery</span><span class="age">9 min</span></div></a>
+                <a class="bcard"><div class="r1"><b>#39</b><b>27.80</b></div><div class="r2">Timur</div><div class="r3"><span><svg class="ic"><use href="#i-bike"/></svg>Delivery</span><span class="age">12 min</span></div></a>
+              </section>
+            </div>
+            <nav class="tabbar"><span><svg class="ic"><use href="#i-house"/></svg>Home</span><span class="on"><svg class="ic"><use href="#i-bag"/></svg>Orders</span><span><svg class="ic"><use href="#i-chat"/></svg>Chats</span><span><svg class="ic"><use href="#i-grid"/></svg>More</span></nav>
+          </div>
+        </div>
+        <figcaption><b>Orders</b>A board by status. Updates on its own, a card opens the order.</figcaption>
+      </figure>
+
+      <!-- Chats -->
+      <figure>
+        <div class="phone small">
+          <div class="cab app">
+            <div class="thread-head"><svg class="ic"><use href="#i-back"/></svg><span class="ava">A</span><div><b>Alina</b><small class="ok">Assistant is replying</small></div><label class="switch"><i></i>Me</label></div>
+            <div class="thread">
+              <div class="day">Today</div>
+              <div class="bub c"><small>Customer</small>Can I get it without onions?</div>
+              <div class="bub b"><small>Assistant</small>Of course. Double cheeseburger, no onions — $9.90. Delivery or pickup?</div>
+              <div class="bub c"><small>Customer</small>Delivery, 14 Main St, apt 7</div>
+              <div class="bub b"><small>Assistant</small>14 Main St is in the Downtown zone, delivery $2.50. Total $15.90. Shall I confirm?</div>
+              <div class="bub c"><small>Customer</small>Yes</div>
+              <div class="sys">Order #42 created · waiting for your confirmation</div>
+            </div>
+            <div class="thread-input"><span>Write to the customer</span><svg class="ic"><use href="#i-send"/></svg></div>
+          </div>
+        </div>
+        <figcaption><b>Chats</b>You see everything the assistant says. One switch, and the conversation is yours.</figcaption>
+      </figure>
+
+      <!-- Kitchen -->
+      <figure>
+        <div class="phone small">
+          <div class="cab app">
+            <div class="app-top"><div><b>Kitchen</b><small>Queue · updates on its own</small></div><span class="ubtn outline xs"><svg class="ic"><use href="#i-volume"/></svg>Sound</span></div>
+            <div class="utabs"><span class="on">All <i>3</i></span><span>Delivery <i>2</i></span><span>Pickup <i>1</i></span></div>
+            <div class="summary"><div><span>In progress</span><b>3</b></div><div><span>10–20 min</span><b class="warn">1</b></div><div><span>20+ min</span><b>0</b></div></div>
+            <article class="kcard warn">
+              <header><b>#40</b><span class="kind"><svg class="ic"><use href="#i-bike"/></svg>Delivery</span><span class="timer warn"><svg class="ic"><use href="#i-clock"/></svg>14 min</span></header>
+              <ul class="items"><li><b>2×</b><span>Classic burger</span></li><li><b>1×</b><span>Fries</span></li><li><b>1×</b><span>Cola 0.5 l</span></li></ul>
+              <div class="note"><svg class="ic"><use href="#i-alert"/></svg>No sauce, spicy on the side</div>
+              <footer><span class="pcs">4 items</span><span class="pay">Paid</span><span class="ubtn dark xs"><svg class="ic"><use href="#i-check"/></svg>Ready</span></footer>
+            </article>
+            <article class="kcard">
+              <header><b>#41</b><span class="kind"><svg class="ic"><use href="#i-bag"/></svg>Pickup</span><span class="timer"><svg class="ic"><use href="#i-clock"/></svg>5 min</span></header>
+              <ul class="items"><li><b>1×</b><span>Chicken burger</span></li><li><b>2×</b><span>Nuggets, 9 pcs</span></li></ul>
+              <footer><span class="pcs">3 items</span><span class="pay cash">Cash</span><span class="ubtn dark xs"><svg class="ic"><use href="#i-check"/></svg>Ready</span></footer>
+            </article>
+          </div>
+        </div>
+        <figcaption><b>Kitchen</b>A queue with a timer on every order. One button: “Ready”.</figcaption>
+      </figure>
+
+      <!-- Courier -->
+      <figure>
+        <div class="phone small">
+          <div class="cab app">
+            <div class="app-top"><b>Deliveries</b></div>
+            <div class="utabs"><span class="on">Mine <i>1</i></span><span>Available <i>2</i></span></div>
+            <article class="kcard">
+              <header><b>#38</b><span class="badge progress">On the way</span><span class="timer"><svg class="ic"><use href="#i-clock"/></svg>11 min</span></header>
+              <div class="where"><b>Dana</b><small>3 Park Ave, entrance 2 · Downtown · <span class="pay">Paid</span></small></div>
+              <ul class="items"><li><b>1×</b><span>Double cheeseburger</span></li><li><b>1×</b><span>Lemonade 0.5 l</span></li></ul>
+              <footer><span class="ubtn outline sq"><svg class="ic"><use href="#i-phone"/></svg></span><span class="ubtn outline sq"><svg class="ic"><use href="#i-pin"/></svg></span><span class="ubtn dark xs grow"><svg class="ic"><use href="#i-check"/></svg>Delivered</span></footer>
+            </article>
+            <div class="sep">Available</div>
+            <article class="kcard">
+              <header><b>#40</b><span class="badge ok">Ready</span><span class="timer"><svg class="ic"><use href="#i-clock"/></svg>2 min</span></header>
+              <div class="where"><b>Timur</b><small>14 Main St, apt 7 · Downtown · 3 items</small></div>
+              <footer><span class="pay cash">Cash</span><span class="ubtn primary xs right"><svg class="ic"><use href="#i-truck"/></svg>Take</span></footer>
+            </article>
+          </div>
+        </div>
+        <figcaption><b>Courier</b>Their own deliveries and available orders. “Take”, call, route, “Delivered”.</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCALE ================= -->
+<section class="section wrap" id="scale">
+  <div class="section-head">
+    <p class="eyebrow">When you grow</p>
+    <h2>Start with one location. <span class="muted">Nothing will need replacing.</span></h2>
+  </div>
+  <div class="tiles">
+    <article><h3>Several locations and couriers</h3><p>Every employee gets their own login and screen. The owner sees it all in one dashboard.</p></article>
+    <article><h3>Take over the conversation</h3><p>Write to the customer yourself at any moment. The assistant stays quiet until you hand it back.</p></article>
+    <article><h3>Menu, hours, zones</h3><p>Edit them in the dashboard, no developer needed. The assistant knows about the changes right away.</p></article>
+  </div>
+</section>
+
+<!-- ================= UNDER THE HOOD ================= -->
+<section class="hood" id="hood">
+  <div class="wrap">
+    <div class="hood-grid">
+      <div>
+        <p class="eyebrow"><i></i>Under the hood</p>
+        <h2>Under the hood, a full ERP system. <span>On the outside, one “Accept” button.</span></h2>
+        <p class="hood-lead">Every order, customer and menu item is a record in an accounting system, not a message in a chat. So nothing gets lost, everything can be counted, and when you need inventory, finance or a second location, they are already there.</p>
+        <details class="hint">
+          <summary>What is ERP?<svg class="ic"><use href="#i-arrow"/></svg></summary>
+          <p>One program instead of a notebook, spreadsheets and chat threads. Orders, customers, menu, money and staff live in one place, with history and reports. We use ERPNext, an open-source system used by tens of thousands of companies worldwide.</p>
+        </details>
+      </div>
+      <ul class="chips">
+        <li><b>Telegram</b><span>Customers write where they already are</span></li>
+        <li><b>ERPNext</b><span>Open-source ERP, the data is yours</span></li>
+        <li><b>24/7</b><span>The assistant doesn’t sleep or take lunch breaks</span></li>
+        <li><b>Roles and permissions</b><span>Kitchen, courier and owner each see their own</span></li>
+        <li><b>Pause and takeover</b><span>A person always outranks the assistant</span></li>
+        <li><b>History</b><span>Every conversation and order is saved</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section wrap faq" id="faq">
+  <div class="section-head">
+    <p class="eyebrow">FAQ</p>
+    <h2>Let’s clear <span class="muted">things up.</span></h2>
+  </div>
+  <div class="qa">
+    <details open>
+      <summary>What happens if the assistant doesn’t know the answer?<span>+</span></summary>
+      <p>It doesn’t make things up. It tells the customer it will check, pauses the conversation and shows you the chat marked “waiting for you”.</p>
+    </details>
+    <details>
+      <summary>Do I need to install anything?<span>+</span></summary>
+      <p>No. Customers only need Telegram, you and your staff only need a phone browser. The kitchen is comfortable on a tablet.</p>
+    </details>
+    <details>
+      <summary>Can I change the menu and prices myself?<span>+</span></summary>
+      <p>Yes, in the dashboard. The assistant uses the new data right away, no retraining and no developer.</p>
+    </details>
+    <details>
+      <summary>Will it work if I don’t run a café?<span>+</span></summary>
+      <p>The scheme is the same for any business where people write and order: rentals, shops, tours, services. Message us and we’ll look at your case.</p>
+    </details>
+    <details>
+      <summary>How much does it cost?<span>+</span></summary>
+      <p>Depends on the volume and what you already have. Message us on Telegram, we’ll work it out in one conversation.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact wrap" id="contact">
+  <p class="eyebrow"><i></i>Let’s start with a conversation</p>
+  <h2>Message us on Telegram. <span>Tell us how you take orders today.</span></h2>
+  <a class="btn btn-accent btn-lg" href="https://t.me/NoGodBut1" target="_blank" rel="noopener"><svg class="ic"><use href="#i-send"/></svg>@NoGodBut1</a>
+  <p class="footnote">We reply personally. We’ll show you the dashboard on a live example and estimate the setup time.</p>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <a class="brand" href="#top">Habibi<svg class="brandmark" aria-hidden="true"><use href="#i-mark"/></svg></a>
+  <p>Digital employees, dashboards and ERP for small business.</p>
+  <small>© 2026 Habibi</small>
+</footer>
+</body>
+</html>
